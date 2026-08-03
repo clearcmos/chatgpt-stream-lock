@@ -1,0 +1,7 @@
+# ukemi triage file. Entries here suppress findings in future scans.
+
+[[ignore]]
+id = "vuln-d28f12c6d1e0"
+reason = "dev-only transitive via vitest->vite->postcss; extension ships plain JS with zero runtime deps, so nanoid never reaches users; DoS in non-secure generator, EPSS 0.00, no import in project code; no in-range fix (fix is 5.1.16, postcss pins ^3)"
+added = "2026-08-03"
+expires = "2027-02-01"
