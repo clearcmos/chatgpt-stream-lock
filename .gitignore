@@ -1,0 +1,5 @@
+node_modules/
+coverage/
+# Chromium writes content-verification hashes into an unpacked extension's
+# directory when it loads it; generated noise, never source.
+_metadata/

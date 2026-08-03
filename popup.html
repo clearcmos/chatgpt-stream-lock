@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        font-size: 13px;
+        margin: 0;
+        padding: 14px;
+        min-width: 280px;
+      }
+      h1 {
+        font-size: 14px;
+        margin: 0 0 10px;
+      }
+      #current {
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: color-mix(in srgb, currentColor 8%, transparent);
+        margin-bottom: 10px;
+        line-height: 1.5;
+        word-break: break-all;
+      }
+      #current .name {
+        font-weight: 600;
+      }
+      #current .id {
+        font-size: 11px;
+        opacity: 0.65;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 7px 10px;
+        border-radius: 8px;
+        border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+        background: none;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+        margin-bottom: 8px;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: default;
+      }
+      button.danger {
+        border-color: #b3454a;
+        color: #b3454a;
+      }
+      #hint {
+        font-size: 12px;
+        opacity: 0.7;
+        line-height: 1.45;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Stream Lock for ChatGPT</h1>
+    <div id="current"></div>
+    <button id="lockBtn" disabled>Lock to this project</button>
+    <button id="clearBtn" class="danger" hidden>Clear lock</button>
+    <div id="hint"></div>
+    <script src="lib.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

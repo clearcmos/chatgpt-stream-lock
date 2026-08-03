@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Stream Lock for ChatGPT",
+  "version": "2.0.0",
+  "description": "Locks chatgpt.com to one project: blocks navigation to other chats and projects, hides history and account identity in the UI. Configure by opening the popup on a project page.",
+  "permissions": ["declarativeNetRequest", "webNavigation", "storage"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://chat.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Stream Lock for ChatGPT"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://chat.com/*"
+      ],
+      "js": ["lib.js", "guard.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
